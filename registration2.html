@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="reg2.css">
+</head>
+<body>
+  
+  <div >
+   <center><h1 style="color: rgb(255, 255, 255);">
+   <div class="heading"> <big> Registration Form </big></div></h1>
+   </center>
+  <hr>
+  <h3>
+  <form class="form" >
+   &nbsp;&nbsp;&nbsp;<b> <label class="formdesign" >User ID:</label></b>
+    <input  type="text"id="User Id:"placeholder="Enter User ID" class="id" ><br><br><br>
+    &nbsp;&nbsp;&nbsp; <label for="password">Password:</label>
+		<input type="password" id="password" name="password"placeholder="Enter Password"><br><br><br>
+    &nbsp;&nbsp;&nbsp;  <label for="name">Name:</label>
+		<input type="text" id="name" name="name"placeholder="Enter Name:" ><br><br><br>
+    &nbsp;&nbsp;&nbsp; <b>  <label class="formdesign">Address:</label></b>
+    <input type="text"id="Address" placeholder="Enter Address:"><br><br><br>
+  
+    &nbsp;&nbsp;&nbsp;<b><label >Country:</label></b>
+    <select name="Country" placeholder="Select Country">
+      <option value="Country">Select Country</option>
+      <option value="Country">India</option>
+      <option value="Country">Bangladesh</option>
+      <option value="Country">Singapore</option>
+      <option value="Country">America</option>
+      <option value="Country">Thailand</option>
+      <option value="Country">Russia</option>
+   </select><br><br><br>
+   &nbsp;&nbsp;&nbsp;<b> <label>Zip code:</label></b>
+    <input type="text"id="Zip code:"placeholder="Enter Zip code " ><br><br><br>
+    &nbsp;&nbsp;&nbsp;<b><label for="Gender"required>Gender: </label></b>
+   &nbsp;&nbsp;&nbsp;<b><input type="radio" name="Gender"value="Male">Male: </b>
+   &nbsp;&nbsp;&nbsp;<b><input type="radio" name="Gender"value="Female">Female: </b>
+   &nbsp;&nbsp;&nbsp;<b><input type="radio" name="Gender"value="Male">Others: </b> <br><br><br>
+  &nbsp;&nbsp;&nbsp;<label for="email">Email:</label>
+  <input type="email" id="email" name="email"placeholder="Enter valid Email"><br><br><br>
+
+    &nbsp;&nbsp;&nbsp;<b><label for="Language" required>Language: </label></b>
+    &nbsp;&nbsp;&nbsp;<b><input type="radio" name="Language" value="English">English</b>
+    &nbsp;&nbsp;&nbsp;<input type="radio" name="Language" value="Non English">Non English<br><br><br>
+    &nbsp;&nbsp;&nbsp;<b><label>About: </label>
+    <textarea rows="5" columns="5"placeholder="Optional"></textarea><br><br><br>
+    <center><input type="submit"  value="Submit" class="but" onclick="validateForm()"></center>
+</form>
+</h3></div>
+
+    
+</body>
+<script>
+  function validateForm() {
+			// Get form values
+			var name = document.forms[0]["name"].value;
+			var email = document.forms[0]["email"].value;
+			var password = document.forms[0]["password"].value;
+	// Validate name
+    if (name.length < 2) {
+				alert("Name must be at least 2 characters");
+				return false;
+			}
+
+			// Validate email
+			var email_regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			if (!email_regex.test(email)) {
+				alert("Please enter a valid email address");
+				return false;
+			}
+
+			// Validate password
+			if (password.length < 8) {
+				alert("Password must be at least 8 characters");
+				return false;
+                // Form is valid
+			alert("Form submitted successfully");
+			return true;
+			}
+  }
+</script>
+
+</html>
